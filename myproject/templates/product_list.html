@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr"
+      lang="en">
+<head>
+  <title>Product</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1"
+        name="viewport">
+  <link crossorigin="anonymous"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        rel="stylesheet">
+</head>
+<body>
+  {% load static %}
+  <link href="{% static 'style.css' %}"
+        rel="stylesheet"
+        type="text/css">
+  <header>
+    <button class="btn btn-danger"
+            type="button">
+    <h2>Product Django</h2></button>
+  </header>
+  <div class="container">
+    <div class="row">
+      {% for product in qs %}
+      <div class="col-sm polaroid">
+        <center>
+          <img alt="img"
+                  src="../media/{{product.image}}"
+                  style="width:200px">
+        </center>
+        <div class="container1">
+          <h4 style="color:blue;">{{product.name}} <strong>{{product.price}} ฿</strong></h4>
+        </div>
+      </div>{% endfor %}
+    </div>
+  </div>
+</body>
+</html>

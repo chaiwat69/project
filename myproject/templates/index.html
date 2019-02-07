@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>shop</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+</head>
+
+<body>
+    {% load static %}
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+    <!--==========================
+    Header
+  ============================-->
+    <header id="header">
+        <div class="container-fluid">
+            <div class="pull-left" id="logo">
+                <h1><a class="scrollto" href="#intro">shop</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><input name="search" placeholder="Search.." type="text"></li>
+                    <li class="menu-active">
+                        <a href="#intro">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#team">Team</a>
+                    </li>
+                    <li class="menu-has-children">
+                        <a href="">Drop Down</a>
+                        <ul>
+                            <li>
+                                <a href="#">Drop Down 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Drop Down 3</a>
+                            </li>
+                            <li>
+                                <a href="#">Drop Down 4</a>
+                            </li>
+                            <li>
+                                <a href="#">Drop Down 5</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
+    <!-- #header -->
+    <main id="main">
+        <!--==========================
+      Portfolio Section
+    ============================-->
+        <section class="section-bg" id="portfolio">
+            <div class="container">
+                <header class="section-header">
+                    <h3 class="section-title">Product</h3>
+                </header>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul id="portfolio-flters">
+                            <li class="filter-active" data-filter="*">All</li>
+                            <li data-filter=".filter-app">apple</li>
+                            <li data-filter=".filter-card">mango</li>
+                            <li data-filter=".filter-web">grape</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row portfolio-container">
+                    {% for product in qs %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img alt="" class="img-fluid" src="../media/{{product.image}}">
+                                <a class="link-preview" data-lightbox="portfolio" data-title="App 1" href="../media/{{product.image}}" title="Preview"></a>
+                                <a class="link-details" href="#" title="More Details"></a>
+                            </figure>
+                            <div class="portfolio-info">
+                                <h4><a href="#">{{product.name}}</a></h4>
+                                <p>{{product.price}} ฿</p>
+                            </div>
+                        </div>
+                    </div>{% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- #portfolio -->
+        <!--==========================
+  Clients Section
+============================-->
+        <section class="wow fadeInUp" id="clients">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Our Clients</h3>
+                </header>
+                <div class="owl-carousel clients-carousel"><img alt="" src="../media/mango.jpg"> <img alt="" src="img/clients/client-2.png"> <img alt="" src="img/clients/client-3.png"> <img alt="" src="img/clients/client-4.png"> <img alt="" src="img/clients/client-5.png"> <img alt="" src="img/clients/client-6.png">                    <img alt="" src="img/clients/client-7.png"> <img alt="" src="img/clients/client-8.png"></div>
+            </div>
+        </section>
+        <!-- #clients -->
+        <!--==========================
+  Clients Section
+============================-->
+        <section class="section-bg wow fadeInUp" id="testimonials">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Testimonials</h3>
+                </header>
+                <div class="owl-carousel testimonials-carousel">
+                    <div class="testimonial-item">
+                        <img alt="" class="testimonial-img" src="img/testimonial-1.jpg">
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4>
+                        <p><img alt="" class="quote-sign-left" src="img/quote-sign-left.png"> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                            risus at semper. <img alt="" class="quote-sign-right" src="img/quote-sign-right.png"></p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img alt="" class="testimonial-img" src="img/testimonial-2.jpg">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                        <p><img alt="" class="quote-sign-left" src="img/quote-sign-left.png"> Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure
+                            amet legam anim culpa. <img alt="" class="quote-sign-right" src="img/quote-sign-right.png"></p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img alt="" class="testimonial-img" src="img/testimonial-3.jpg">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                        <p><img alt="" class="quote-sign-left" src="img/quote-sign-left.png"> Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
+                            minim. <img alt="" class="quote-sign-right" src="img/quote-sign-right.png"></p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img alt="" class="testimonial-img" src="img/testimonial-4.jpg">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                        <p><img alt="" class="quote-sign-left" src="img/quote-sign-left.png"> Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
+                            dolore labore illum veniam. <img alt="" class="quote-sign-right" src="img/quote-sign-right.png"></p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img alt="" class="testimonial-img" src="img/testimonial-5.jpg">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                        <p><img alt="" class="quote-sign-left" src="img/quote-sign-left.png"> Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse
+                            veniam culpa fore nisi cillum quid.
+                            <img alt="" class="quote-sign-right" src="img/quote-sign-right.png"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- #testimonials -->
+        <!--==========================
+      Services Section
+    ============================-->
+        <section id="services">
+            <div class="container">
+                <header class="section-header wow fadeInUp">
+                    <h3>Services</h3>
+                    <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
+                </header>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="icon"></div>
+                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="icon"></div>
+                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="icon"></div>
+                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                        <div class="icon"></div>
+                        <h4 class="title"><a href="">Magni Dolores</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                        <div class="icon"></div>
+                        <h4 class="title"><a href="">Nemo Enim</a></h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                        <div class="icon"></div>
+                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- #services -->
+        <!--==========================
+      Call To Action Section
+    ============================-->
+        <section class="wow fadeIn" id="call-to-action">
+            <div class="container text-center">
+                <h3>Call To Action</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><a class="cta-btn"
+                    href="#">Call To Action</a>
+            </div>
+        </section>
+        <!-- #call-to-action -->
+        <!--==========================
+      Skills Section
+    ============================-->
+        <section id="skills">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Our Skills</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+                </header>
+                <div class="skills-content">
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="progress-bar bg-success" role="progressbar">
+                            <span class="skill">HTML <i class="val">100%</i></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar bg-info" role="progressbar">
+                            <span class="skill">CSS <i class="val">90%</i></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="progress-bar bg-warning" role="progressbar">
+                            <span class="skill">JavaScript <i class="val">75%</i></span>
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" class="progress-bar bg-danger" role="progressbar">
+                            <span class="skill">Photoshop <i class="val">55%</i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--==========================
+      Facts Section
+    ============================-->
+        <section class="wow fadeIn" id="facts">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Facts</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                </header>
+                <div class="row counters">
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">274</span>
+                        <p>Clients</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">421</span>
+                        <p>Projects</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">1,364</span>
+                        <p>Hours Of Support</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">18</span>
+                        <p>Hard Workers</p>
+                    </div>
+                </div>
+                <div class="facts-img"><img alt="" class="img-fluid" src="img/facts-img.png"></div>
+            </div>
+        </section>
+        <!-- #facts -->
+        <!--==========================
+      Team Section
+    ============================-->
+        <section id="team">
+            <div class="container">
+                <div class="section-header wow fadeInUp">
+                    <h3>Team</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp">
+                        <div class="member">
+                            <img alt="" class="img-fluid" src="img/team-1.jpg">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Walter White</h4><span>Chief Executive Officer</span>
+                                    <div class="social">
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="member">
+                            <img alt="" class="img-fluid" src="img/team-2.jpg">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Sarah Jhonson</h4><span>Product Manager</span>
+                                    <div class="social">
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="member">
+                            <img alt="" class="img-fluid" src="img/team-3.jpg">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>William Anderson</h4><span>CTO</span>
+                                    <div class="social">
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="member">
+                            <img alt="" class="img-fluid" src="img/team-4.jpg">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Amanda Jepson</h4><span>Accountant</span>
+                                    <div class="social">
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- #team -->
+        <!--==========================
+      Contact Section
+    ============================-->
+        <section class="section-bg wow fadeInUp" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Contact Us</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                </div>
+                <div class="row contact-info">
+                    <div class="col-md-4">
+                        <div class="contact-address">
+                            <h3>Address</h3>
+                            <address>
+                A108 Adam Street, NY 535022, USA
+              </address>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-phone">
+                            <h3>Phone Number</h3>
+                            <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-email">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@example.com">info@example.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form">
+                    <div id="sendmessage">
+                        Your message has been sent. Thank you!
+                    </div>
+                    <div id="errormessage"></div>
+                    <form action="" class="contactForm" method="post" role="form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input class="form-control" data-msg="Please enter at least 4 chars" data-rule="minlen:4" id="name" name="name" placeholder="Your Name" type="text">
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input class="form-control" data-msg="Please enter a valid email" data-rule="email" id="email" name="email" placeholder="Your Email" type="email">
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" data-msg="Please enter at least 8 chars of subject" data-rule="minlen:4" id="subject" name="subject" placeholder="Subject" type="text">
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" data-msg="Please write something for us" data-rule="required" name="message" placeholder="Message" rows="5"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- #contact -->
+    </main>
+    <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>BizPage</h3>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat
+                            mauris nunc congue.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About us</a>
+                            </li>
+                            <li>
+                                <a href="#">Services</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms of service</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>A108 Adam Street<br> New York, NY 535022<br> United States<br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br></p>
+                        <div class="social-links">
+                            <a class="twitter" href="#"></a>
+                            <a class="facebook" href="#"></a>
+                            <a class="instagram" href="#"></a>
+                            <a class="google-plus" href="#"></a>
+                            <a class="linkedin" href="#"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                        <form action="" method="post">
+                            <input name="email" type="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+        -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <!-- #footer -->
+    <a class="back-to-top" href="#"></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+    <!-- JavaScript Libraries -->
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+
+    <script src="contactform/contactform.js"></script>
+    <!-- Template Main Javascript File -->
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
