@@ -17,14 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp import views
+# from myapp import ProductListView
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('current_datetime/', views.current_datetime, name='current_datetime'),
-    path('list_product/', views.list_product, name='list_product'),
     path('product_list/', views.product_list,name='product_list'),
     path('index/', views.index,name='index'),
+    path('', views.ProductListView.as_view(), name='product_list2'),
+    path('id/<int:pk>/', views.ProductDetailView.as_view(), name='product_detail'),
 
 ]\
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
