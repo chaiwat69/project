@@ -1,4 +1,4 @@
-#!/home/ubuntu/project/env/bin/python
+#!/home/ubuntu64/project/env/bin/python
 
 import sys
 import getopt
